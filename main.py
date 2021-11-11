@@ -47,12 +47,21 @@ def desvio_padrao(values):
     desv = math.sqrt(var)
     return desv
 
+def surtges_n_classes(r, n):
+    value = 1 + (3.322 * math.log10(n))
+
+    return r/value
+def n_classes(n):
+    return math.sqrt(n)
+
 if __name__ == "__main__":
 
+    print(surtges_n_classes(9.4, 50))
     file = sys.argv[1]
     values = get_formatted_data(file)
     n    = int(input("1-media\n2-variancia\n3-desvio padrao\n4-erro\n"))
 
+    
     if n == 1:
         med    = media(values)
         print("media: {}".format(med))
